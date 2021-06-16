@@ -52,7 +52,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.back_to_login:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(RegisterUser.this,MainActivity.class));
                 break;
             case R.id.button_register:
                 registerUser();
@@ -110,7 +110,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(username,age,password);
+                            User user = new User(username,age,email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -118,7 +118,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if(task.isSuccessful()){
-                                                            Toast.makeText(RegisterUser.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
+                                                            Toast.makeText(RegisterUser.this,"User has been registered successfully.Check your email for confirmation!",Toast.LENGTH_LONG).show();
+                                                            startActivity(new Intent(RegisterUser.this,MainActivity.class));
                                                         }else{
                                                             Toast.makeText(RegisterUser.this,"Failed to register",Toast.LENGTH_LONG).show();
                                                         }
