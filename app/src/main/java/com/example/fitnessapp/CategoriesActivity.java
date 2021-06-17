@@ -36,6 +36,8 @@ public class CategoriesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         categories = new ArrayList<>();
+        createCategories();
+
         categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
 
@@ -54,5 +56,11 @@ public class CategoriesActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void createCategories(){
+        for(int i=0;i<10;i++){
+            categories.add(new Category(new String("Category " + i)));
+        }
     }
 }
