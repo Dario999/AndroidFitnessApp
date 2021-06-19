@@ -6,27 +6,43 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Application;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.adapters.CategoriesAdapter;
 import com.example.fitnessapp.model.Category;
 import com.example.fitnessapp.model.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    DatabaseReference databaseReference;
-    CategoriesAdapter categoriesAdapter;
-    ArrayList<Category> categories;
+    private RecyclerView recyclerView;
+    private DatabaseReference databaseReference;
+    private CategoriesAdapter categoriesAdapter;
+    private ArrayList<Category> categories;
+    private ImageView imageView;
+
+    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +54,33 @@ public class CategoriesActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //imageView = findViewById(R.id.image_test);
+
         categories = new ArrayList<>();
 
         categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
+
+        storageReference = FirebaseStorage.getInstance().getReference("images/random.jpg");
+
+        try {
+            File file = File.createTempFile("tempFile",".jpg");
+            storageReference.getFile(file)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                            //imageView.setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(CategoriesActivity.this,"Failed to load image",Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
