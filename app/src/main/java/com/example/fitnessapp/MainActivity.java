@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,RegisterUser.class));
                 break;
             case R.id.button_login:
-                userLogin();
+                //userLogin();
+                startActivity(new Intent(MainActivity.this,CategoriesActivity.class));
                 break;
         }
     }

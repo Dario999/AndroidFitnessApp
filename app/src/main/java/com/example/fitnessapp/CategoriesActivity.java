@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Application;
 import android.os.Bundle;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.adapters.CategoriesAdapter;
 import com.example.fitnessapp.model.Category;
+import com.example.fitnessapp.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity {
 
@@ -36,7 +39,6 @@ public class CategoriesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         categories = new ArrayList<>();
-        createCategories();
 
         categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
@@ -58,9 +60,4 @@ public class CategoriesActivity extends AppCompatActivity {
         });
     }
 
-    private void createCategories(){
-        for(int i=0;i<10;i++){
-            categories.add(new Category(new String("Category " + i)));
-        }
-    }
 }
