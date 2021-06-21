@@ -38,11 +38,11 @@ public class CategoriesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private DatabaseReference databaseReference;
+    private StorageReference storageReference;
     private CategoriesAdapter categoriesAdapter;
     private ArrayList<Category> categories;
     private ImageView imageView;
 
-    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
