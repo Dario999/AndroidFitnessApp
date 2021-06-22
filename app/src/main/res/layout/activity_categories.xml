@@ -29,17 +29,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="198dp"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home Workout for Men" />
+            android:text="Home Workout"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
