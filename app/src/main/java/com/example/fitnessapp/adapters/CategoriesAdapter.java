@@ -88,8 +88,10 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
         }else if(position == 1){
             //holder.imageView.setImageResource(R.drawable.abs);
             holder.linearLayout.setBackgroundResource(R.drawable.abs);
+        }else if(position == 2){
+            holder.linearLayout.setBackgroundResource(R.drawable.shoulder);
         }else{
-            holder.linearLayout.setBackgroundResource(R.drawable.abs);
+            holder.linearLayout.setBackgroundResource(R.drawable.legs);
         }
     }
 
