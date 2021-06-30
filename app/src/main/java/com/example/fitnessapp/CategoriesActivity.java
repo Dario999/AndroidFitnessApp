@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Application;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,6 +22,7 @@ import com.example.fitnessapp.model.Category;
 import com.example.fitnessapp.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +38,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriesActivity extends AppCompatActivity {
+public class CategoriesActivity extends AppCompatActivity implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private DatabaseReference databaseReference;
@@ -42,6 +46,7 @@ public class CategoriesActivity extends AppCompatActivity {
     private CategoriesAdapter categoriesAdapter;
     private ArrayList<Category> categories;
     private ImageView imageView;
+    private Button buttonProfile;
 
 
     @Override
@@ -54,7 +59,8 @@ public class CategoriesActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //imageView = findViewById(R.id.image_test);
+        buttonProfile = (Button) findViewById(R.id.button_profile);
+        buttonProfile.setOnClickListener(this);
 
         categories = new ArrayList<>();
 
@@ -97,6 +103,25 @@ public class CategoriesActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_profile:
+                openProfileActivity();
+                break;
+        }
+    }
+
+    private void openProfileActivity(){
+        if(FirebaseAuth.getInstance().getCurrentUser() != null) {
+            startActivity(new Intent(this, ProfileActivity.class));
+        }else{
+            Toast.makeText(CategoriesActivity.this,"Please login first!",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,MainActivity.class));
+        }
+
     }
 
 }

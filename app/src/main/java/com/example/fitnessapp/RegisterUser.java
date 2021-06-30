@@ -26,7 +26,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private EditText editTextUsername,editTextAge,editTextEmail,editTextPassword,editTextConfirmPassword;
     private ProgressBar progressBar;
-    private TextView backToLogin,registerUser;
+    private Button backToLogin,registerUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_register_user);
         mAuth = FirebaseAuth.getInstance();
 
-        backToLogin = (TextView) findViewById(R.id.back_to_login);
+        backToLogin = (Button) findViewById(R.id.back_to_login);
         backToLogin.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.button_register);
