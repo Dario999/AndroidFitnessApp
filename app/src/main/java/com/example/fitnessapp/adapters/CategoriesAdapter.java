@@ -1,8 +1,10 @@
 package com.example.fitnessapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessapp.CategoriesActivity;
+import com.example.fitnessapp.ExercisesActivity;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.model.Category;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -93,6 +96,21 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
         }else{
             holder.linearLayout.setBackgroundResource(R.drawable.legs);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // inside on click listener method we are calling a new activity
+                // and passing all the data of that item in next intent.
+                Intent i = new Intent(context, ExercisesActivity.class);
+                i.putExtra("position", position);
+
+                System.out.println("POSITION: " + position);
+                // after passing that data we are
+                // starting our new intent.
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
