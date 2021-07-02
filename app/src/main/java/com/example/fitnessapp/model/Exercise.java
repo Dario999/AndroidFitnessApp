@@ -4,10 +4,13 @@ public class Exercise {
 
     private String name;
 
+    private Long category;
+
     public Exercise(){}
 
-    public Exercise(String name){
+    public Exercise(String name,Long category){
         this.name = name;
+        this.category = category;
     }
 
     public void setName(String name){
@@ -16,5 +19,13 @@ public class Exercise {
 
     public String getName(){
         return name;
+    }
+
+    public Long getCategory() {
+        return category;
+    }
+
+    public void setCategory(Long category) {
+        this.category = category;
     }
 }

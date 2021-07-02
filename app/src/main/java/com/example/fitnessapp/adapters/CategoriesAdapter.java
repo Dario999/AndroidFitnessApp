@@ -103,7 +103,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
                 // inside on click listener method we are calling a new activity
                 // and passing all the data of that item in next intent.
                 Intent i = new Intent(context, ExercisesActivity.class);
-                i.putExtra("position", position);
+                i.putExtra("position", String.valueOf(position));
 
                 System.out.println("POSITION: " + position);
                 // after passing that data we are

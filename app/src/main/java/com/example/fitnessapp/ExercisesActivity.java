@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExercisesActivity extends AppCompatActivity {
 
@@ -40,6 +42,22 @@ public class ExercisesActivity extends AppCompatActivity {
 
         exercises = new ArrayList<>();
 
+
+
+        String position;
+        Bundle extras = getIntent().getExtras();
+        if(extras == null) {
+            position = null;
+        } else {
+            position = extras.getString("position");
+        }
+//        ArrayList<Exercise> temp = new ArrayList<>();
+//        for(Exercise e : exercises){
+//            if(e.getName().equals("Test")){
+//                temp.add(e);
+//            }
+//        }
+
         exercisesAdapter = new ExercisesAdapter(this,exercises);
         recyclerView.setAdapter(exercisesAdapter);
 
@@ -48,7 +66,9 @@ public class ExercisesActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Exercise exercise = dataSnapshot.getValue(Exercise.class);
-                    exercises.add(exercise);
+                    if(exercise.getCategory().toString().equals(position)){
+                        exercises.add(exercise);
+                    }
                 }
                 exercisesAdapter.notifyDataSetChanged();
             }
