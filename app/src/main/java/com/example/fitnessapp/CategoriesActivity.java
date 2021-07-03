@@ -67,26 +67,26 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
         categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
 
-        storageReference = FirebaseStorage.getInstance().getReference("images/random.jpg");
+        //storageReference = FirebaseStorage.getInstance().getReference("images/random.jpg");
 
-        try {
-            File file = File.createTempFile("tempFile",".jpg");
-            storageReference.getFile(file)
-                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-                            //imageView.setImageBitmap(bitmap);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(CategoriesActivity.this,"Failed to load image",Toast.LENGTH_LONG).show();
-                }
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            File file = File.createTempFile("tempFile",".jpg");
+//            storageReference.getFile(file)
+//                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+//                            //imageView.setImageBitmap(bitmap);
+//                        }
+//                    }).addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    Toast.makeText(CategoriesActivity.this,"Failed to load image",Toast.LENGTH_LONG).show();
+//                }
+//            });
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

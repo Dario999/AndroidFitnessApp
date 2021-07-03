@@ -8,12 +8,13 @@
     android:background="@color/white">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exercises_rv"
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,14 +33,14 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.category_item,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.exercise_item,parent,false);
         return new ExercisesAdapter.MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ExercisesAdapter.MyViewHolder holder, int position) {
         Exercise exercise = exercises.get(position);
-        holder.textViewName.setText("Test");
+        //holder.textViewName.setText("Test");
     }
 
     @Override
@@ -56,9 +56,9 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.category_name);
+            //textViewName = itemView.findViewById(R.id.category_name);
             //imageView = itemView.findViewById(R.id.image_category);
-            linearLayout = itemView.findViewById(R.id.category_item_ll);
+            //linearLayout = itemView.findViewById(R.id.exercise_item_ll);
         }
 
     }
