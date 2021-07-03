@@ -43,7 +43,8 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
         holder.textViewName.setText(exercise.getName());
         holder.textViewDescription.setText(exercise.getDescription());
         StringBuilder temp = new StringBuilder("exercise");
-        temp.append(String.valueOf(position));
+        //temp.append(String.valueOf(position));
+        temp.append(exercise.getId().toString());
         Context context = holder.imageView.getContext();
         int id = context.getResources().getIdentifier(temp.toString(), "drawable", context.getPackageName());
 

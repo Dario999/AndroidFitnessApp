@@ -8,12 +8,15 @@ public class Exercise {
 
     private String description;
 
+    private Long id;
+
     public Exercise(){}
 
-    public Exercise(String name, Long category, String description) {
+    public Exercise(String name, Long category, String description, Long id) {
         this.name = name;
         this.category = category;
         this.description = description;
+        this.id = id;
     }
 
     public void setName(String name){
@@ -38,5 +41,13 @@ public class Exercise {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
