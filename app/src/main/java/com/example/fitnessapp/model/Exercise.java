@@ -6,11 +6,14 @@ public class Exercise {
 
     private Long category;
 
+    private String description;
+
     public Exercise(){}
 
-    public Exercise(String name,Long category){
+    public Exercise(String name, Long category, String description) {
         this.name = name;
         this.category = category;
+        this.description = description;
     }
 
     public void setName(String name){
@@ -27,5 +30,13 @@ public class Exercise {
 
     public void setCategory(Long category) {
         this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

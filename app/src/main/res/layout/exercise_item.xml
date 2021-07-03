@@ -9,15 +9,14 @@
     app:cardCornerRadius="8dp"
     android:layout_marginTop="15dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:background="@color/white">
+    android:layout_marginRight="10dp" >
 
     <LinearLayout
         android:id="@+id/exercise_item_ll"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/gray">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,13 +26,13 @@
                 android:id="@+id/exercise_name"
                 android:layout_width="140dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:maxWidth="220dp"
                 android:text="Name"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/exercise_image"
-                app:layout_constraintHorizontal_bias="0.373"
+                app:layout_constraintHorizontal_bias="0.161"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
@@ -45,22 +44,23 @@
                 android:text="Description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/exercise_image"
-                app:layout_constraintHorizontal_bias="0.313"
+                app:layout_constraintHorizontal_bias="0.135"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/exercise_name"
-                app:layout_constraintVertical_bias="0.318"
+                app:layout_constraintVertical_bias="0.229"
+                android:textSize="20sp"
                 tools:visibility="visible" />
 
             <ImageView
                 android:id="@+id/exercise_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="115dp"
+                android:layout_height="109dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.307"
+                app:layout_constraintVertical_bias="0.225"
                 tools:srcCompat="@tools:sample/avatars"
                 tools:visibility="visible" />
 

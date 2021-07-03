@@ -66,7 +66,7 @@ public class ExercisesActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Exercise exercise = dataSnapshot.getValue(Exercise.class);
-                    if(exercise.getCategory().toString().equals(position)){
+                    if(exercise.getCategory() != null && exercise.getCategory().toString().equals(position)){
                         exercises.add(exercise);
                     }
                 }
