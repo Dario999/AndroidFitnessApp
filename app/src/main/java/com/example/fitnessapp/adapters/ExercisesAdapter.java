@@ -40,7 +40,8 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull ExercisesAdapter.MyViewHolder holder, int position) {
         Exercise exercise = exercises.get(position);
-        //holder.textViewName.setText("Test");
+        holder.textViewName.setText(exercise.getName());
+        holder.textViewDescription.setText(exercise.getDescription());
     }
 
     @Override
@@ -50,14 +51,15 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewName;
+        TextView textViewName,textViewDescription;
         ImageView imageView;
         LinearLayout linearLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            //textViewName = itemView.findViewById(R.id.category_name);
-            //imageView = itemView.findViewById(R.id.image_category);
+            textViewName = itemView.findViewById(R.id.exercise_name);
+            textViewDescription = itemView.findViewById(R.id.exercise_description);
+            imageView = itemView.findViewById(R.id.exercise_image);
             //linearLayout = itemView.findViewById(R.id.exercise_item_ll);
         }
 

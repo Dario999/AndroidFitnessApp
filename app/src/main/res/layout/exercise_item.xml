@@ -7,14 +7,14 @@
     app:cardUseCompatPadding="true"
     app:cardElevation="0dp"
     app:cardCornerRadius="8dp"
-    android:layout_marginTop="15dp"
+    android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp" >
 
     <LinearLayout
         android:id="@+id/exercise_item_ll"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:orientation="vertical"
         android:background="@color/gray">
 
@@ -24,15 +24,16 @@
 
             <TextView
                 android:id="@+id/exercise_name"
-                android:layout_width="140dp"
-                android:layout_height="36dp"
+                android:layout_width="205dp"
+                android:layout_height="69dp"
                 android:layout_marginTop="16dp"
                 android:maxWidth="220dp"
                 android:text="Name"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/exercise_image"
-                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintHorizontal_bias="0.333"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
@@ -42,13 +43,14 @@
                 android:layout_width="121dp"
                 android:layout_height="32dp"
                 android:text="Description"
+                android:textSize="20sp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/exercise_image"
-                app:layout_constraintHorizontal_bias="0.135"
+                app:layout_constraintHorizontal_bias="0.122"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/exercise_name"
-                app:layout_constraintVertical_bias="0.229"
-                android:textSize="20sp"
+                app:layout_constraintVertical_bias="0.276"
                 tools:visibility="visible" />
 
             <ImageView
