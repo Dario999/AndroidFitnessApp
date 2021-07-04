@@ -62,7 +62,7 @@
         android:textColor="@color/black"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"

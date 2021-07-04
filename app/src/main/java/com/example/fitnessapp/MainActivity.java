@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,RegisterUser.class));
                 break;
             case R.id.button_login:
-                //userLogin();
-                startActivity(new Intent(MainActivity.this,CategoriesActivity.class));
+                userLogin();
+                //startActivity(new Intent(MainActivity.this,CategoriesActivity.class));
                 break;
             case R.id.button_google:
                 signIn();

@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import com.example.fitnessapp.model.User;
 import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseUser user;
     private DatabaseReference databaseReference;
+    private GoogleSignInClient mGoogleSignInClient;
     private String userID;
 
     private Button buttonLogout;
@@ -35,10 +39,18 @@ public class ProfileActivity extends AppCompatActivity {
 
         buttonLogout = (Button) findViewById(R.id.button_logout);
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
+
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                mGoogleSignInClient.signOut();
                 startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             }
         });
