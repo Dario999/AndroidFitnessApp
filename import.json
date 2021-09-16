@@ -1,0 +1,212 @@
+[
+  {
+    "id": 0,
+    "category": 0,
+    "description": "00:20",
+    "name": "JUMPING JACKS"
+  },
+  {
+    "id": 1,
+    "category": 0,
+    "description": "x10",
+    "name": "INCLINE PUSH-UPS"
+  },
+  {
+    "id": 2,
+    "category": 0,
+    "description": "x10",
+    "name": "BOX PUSH-UPS"
+  },
+  {
+    "id": 3,
+    "category": 0,
+    "description": "x10",
+    "name": "PUSH-UPS"
+  },
+  {
+    "id": 4,
+    "category": 0,
+    "description": "x10",
+    "name": "INCLINE PUSH-UPS"
+  },
+  {
+    "id": 5,
+    "category": 0,
+    "description": "x10",
+    "name": "KNEE PUSH-UPS"
+  },
+  {
+    "id": 6,
+    "category": 0,
+    "description": "00:20",
+    "name": "SHOULDER STRETCH"
+  },
+  {
+    "id": 7,
+    "category": 0,
+    "description": "00:20",
+    "name": "COBRA STRETCH"
+  },
+  {
+    "id": 8,
+    "category": 1,
+    "description": "00:20",
+    "name": "JUMPING JACKS"
+  },
+  {
+    "id": 9,
+    "category": 1,
+    "description": "x8",
+    "name": "ABDOMINAL CRUNCHES"
+  },
+  {
+    "id": 10,
+    "category": 1,
+    "description": "x8",
+    "name": "MOUNTAING CLIMBER"
+  },
+  {
+    "id": 11,
+    "category": 1,
+    "description": "x10",
+    "name": "HEEL TOUCH"
+  },
+  {
+    "id": 12,
+    "category": 1,
+    "description": "00:30",
+    "name": "PLANK"
+  },
+  {
+    "id": 13,
+    "category": 1,
+    "description": "00:30",
+    "name": "COBRA STRETCH"
+  },
+  {
+    "id": 14,
+    "category": 1,
+    "description": "00:30",
+    "name": "SPINE LUMBAR TWIST STRETCH LEFT"
+  },
+  {
+    "id": 15,
+    "category": 1,
+    "description": "00:30",
+    "name": "SPINE LUMBAR TWIST STRETCH RIGHT"
+  },
+  {
+    "id": 16,
+    "category": 2,
+    "description": "00:20",
+    "name": "JUMPING JACKS"
+  },
+  {
+    "id": 17,
+    "category": 2,
+    "description": "00:12",
+    "name": "ARM RAISES"
+  },
+  {
+    "id": 18,
+    "category": 2,
+    "description": "x8",
+    "name": "RHOMBOID PULLS"
+  },
+  {
+    "id": 19,
+    "category": 2,
+    "description": "00:06",
+    "name": "SIDE ARM RAISE"
+  },
+  {
+    "id": 20,
+    "category": 2,
+    "description": "x10",
+    "name": "KNEE PUSH-UPS"
+  },
+  {
+    "id": 21,
+    "category": 2,
+    "description": "00:30",
+    "name": "SIDE-LYING FLOOR STRETCH LEFT"
+  },
+  {
+    "id": 22,
+    "category": 2,
+    "description": "00:30",
+    "name": "SIDE-LYING FLOOR STRETCH RIGHT"
+  },
+  {
+    "id": 23,
+    "category": 2,
+    "description": "00:30",
+    "name": "CAT COW POSE"
+  },
+  {
+    "id": 24,
+    "category": 2,
+    "description": "00:30",
+    "name": "CHILD'S POSE"
+  },
+  {
+    "id": 25,
+    "category": 3,
+    "description": "00:20",
+    "name": "JUMPING JACKS"
+  },
+  {
+    "id": 26,
+    "category": 3,
+    "description": "x10",
+    "name": "SQUATS"
+  },
+  {
+    "id": 27,
+    "category": 3,
+    "description": "x10",
+    "name": "SIDE-LYING LEG LIFT LEFT"
+  },
+  {
+    "id": 28,
+    "category": 3,
+    "description": "x10",
+    "name": "SIDE-LYING LEG LIFT RIGHT"
+  },
+  {
+    "id": 29,
+    "category": 3,
+    "description": "x10",
+    "name": "SIDE LUNGES"
+  },
+  {
+    "id": 30,
+    "category": 3,
+    "description": "x10",
+    "name": "DONKEY KICKS LEFT"
+  },
+  {
+    "id": 31,
+    "category": 3,
+    "description": "x10",
+    "name": "DONKEY KICKS RIGHT"
+  },
+  {
+    "id": 32,
+    "category": 3,
+    "description": "00:30",
+    "name": "KNEE TO CHEST STRETCH LEFT"
+  },
+  {
+    "id": 33,
+    "category": 3,
+    "description": "00:30",
+    "name": "KNEE TO CHEST STRETCH RIGHT"
+  },
+  {
+    "id": 34,
+    "category": 3,
+    "description": "x10",
+    "name": "WALL CALF RAISES"
+  }
+]
